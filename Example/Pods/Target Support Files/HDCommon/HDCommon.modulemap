@@ -1,0 +1,6 @@
+framework module HDCommon {
+  umbrella header "HDCommon-umbrella.h"
+
+  export *
+  module * { export * }
+}
