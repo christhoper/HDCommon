@@ -1,6 +1,6 @@
 {
   "name": "HDCommon",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "summary": "swift 开发中的一些基础公共库",
   "description": "平时开发的基础工具等，方便组件化，避免重复造轮子；",
   "homepage": "https://github.com/christhoper/HDCommon",
@@ -13,15 +13,20 @@
   },
   "source": {
     "git": "https://github.com/christhoper/HDCommon.git",
-    "tag": "0.1.0"
+    "tag": "1.0.1"
   },
   "platforms": {
     "ios": "10.0"
   },
-  "source_files": "HDCommon/Classes/**/*",
-  "dependencies": {
-    "Alamofire": [
+  "subspecs": [
+    {
+      "name": "Networking",
+      "source_files": "HDCommon/Networking/**/*",
+      "dependencies": {
+        "Alamofire": [
 
-    ]
-  }
+        ]
+      }
+    }
+  ]
 }
