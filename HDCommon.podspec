@@ -30,10 +30,15 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '10.0'
   
-  # STLIMLive-直播
+  # 网络请求
   s.subspec "Networking" do |net|
-      net.source_files = "HDCommon/Networking/**/*"
+      net.source_files = "HDCommon/HDCommon/Networking/**/*"
       net.dependency 'Alamofire'
+  end
+  
+  # 扩展
+  s.subspec "Extension" do |ext|
+      ext.source_files = "HDCommon/HDCommon/Extension/**/*"
   end
   
   # s.resource_bundles = {
