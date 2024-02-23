@@ -1,9 +1,15 @@
 PODS:
   - Alamofire (5.8.1)
-  - HDCommon (1.0.1):
-    - HDCommon/Networking (= 1.0.1)
-  - HDCommon/Networking (1.0.1):
+  - HDCommon (1.0.2):
+    - HDCommon/Base (= 1.0.2)
+    - HDCommon/Extensions (= 1.0.2)
+    - HDCommon/Networking (= 1.0.2)
+    - HDCommon/Utils (= 1.0.2)
+  - HDCommon/Base (1.0.2)
+  - HDCommon/Extensions (1.0.2)
+  - HDCommon/Networking (1.0.2):
     - Alamofire
+  - HDCommon/Utils (1.0.2)
 
 DEPENDENCIES:
   - HDCommon (from `../`)
@@ -18,7 +24,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
-  HDCommon: 2593f73b4938ec87d1d6c8f2145a402161145d6d
+  HDCommon: a4a92f168435ae27bae10f3b50a9e5b6db3fc513
 
 PODFILE CHECKSUM: f8d1d59b86e817411207b9e15a069b8e6351c65d
 

@@ -5,8 +5,9 @@
 //  Created by bailun on 2024/2/22.
 //
 
-public extension UIFont {
-    
+extension UIFont: HDExtended {}
+
+extension HDExtension where ExtendedType: UIFont {
     /// 细体
     static func thin(of size: CGFloat, name: String = "PingFangSC-Thin") -> UIFont {
         return UIFont(name: name, size: size) ?? UIFont.systemFont(ofSize: size, weight: .thin)
@@ -26,5 +27,6 @@ public extension UIFont {
     static func bold(of size: CGFloat, name: String = "PingFangSC-Semibold") -> UIFont {
         return UIFont(name: name, size: size) ?? UIFont.systemFont(ofSize: size, weight: .bold)
     }
+    
 }
 

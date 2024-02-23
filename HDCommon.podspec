@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HDCommon'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'swift 开发中的一些基础公共库'
 
 # This description is used to generate tags and improve search results.
@@ -29,16 +29,26 @@ Pod::Spec.new do |s|
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
+  s.frameworks = 'UIKit', 'Foundation', 'AVKit'
   
   # 网络请求
   s.subspec "Networking" do |net|
-      net.source_files = "HDCommon/HDCommon/Networking/**/*"
+      net.source_files = "HDCommon/Networking/**/*.swift"
       net.dependency 'Alamofire'
   end
   
   # 扩展
-  s.subspec "Extension" do |ext|
-      ext.source_files = "HDCommon/HDCommon/Extension/**/*"
+  s.subspec "Extensions" do |extension|
+      extension.source_files = "HDCommon/Extensions/**/*.{swift,md}"
+  end
+  
+  s.subspec "Base" do |base|
+      base.source_files = "HDCommon/Base/**/*.swift"
+  end
+  
+  # 工具
+  s.subspec "Utils" do |u|
+      u.source_files = "HDCommon/Utils/**/*.swift"
   end
   
   # s.resource_bundles = {
@@ -46,6 +56,6 @@ Pod::Spec.new do |s|
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+
    
 end
