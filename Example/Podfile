@@ -4,7 +4,8 @@ platform :ios, '10.0'
 
 target 'HDCommon_Example' do
   pod 'HDCommon', :path => '../'
-
+  pod 'DoraemonKit'
+  
   target 'HDCommon_Tests' do
     inherit! :search_paths
 

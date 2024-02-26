@@ -164,6 +164,53 @@ public extension HDExtension where ExtendedType: FileManager {
         return FileManager.default
     }
 
+    // MARK: - 快捷创建
+    /// 本地文件路径
+    private static func createFolder() -> String {
+        if let document = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first,
+           let info = Bundle.main.infoDictionary {
+            let projectName = info["CFBundleExecutable"] as? String ?? "HDCommon"
+            return (document as NSString).appendingPathComponent("/\(projectName)/HDCrasher")
+        }
+        return ""
+    }
+    
+    //MARK: - 保存
+    static func writeData(for fileName: String = "crasher", data: Data?) {
+        guard let data = data else {
+            print("❎❎data为空❎❎")
+            return
+        }
+    
+        let savePath = createFolder()
+        /// 是否存在
+        let fileExists = fileManager.fileExists(atPath: savePath)
+        if !fileExists {
+            do {
+                try fileManager.createDirectory(atPath: savePath, withIntermediateDirectories: true, attributes: nil)
+                try data.write(to: URL(fileURLWithPath: "\(savePath)/\(fileName)"))
+            } catch {
+                print("❎❎创建文件夹失败❎❎")
+            }
+        } else {
+            do {
+                try data.write(to: URL(fileURLWithPath: "\(savePath)/\(fileName)"))
+            } catch {
+                print("❎❎保存失败❎❎")
+            }
+        }
+    }
+    
+    //MARK: - 读取
+    static func readData(for fileName: String = "crasher") -> Data? {
+        let localPath = createFolder() + "/\(fileName)"
+        let url = URL(fileURLWithPath: localPath)
+        let handle = try? FileHandle(forReadingFrom: url)
+        let data = handle?.readDataToEndOfFile()
+        return data
+    }
+    
+    
     // MARK: 2.1、创建文件夹(蓝色的，文件夹和文件是不一样的)
     /// 创建文件夹(蓝色的，文件夹和文件是不一样的)
     /// - Parameter folderName: 文件夹的名字
@@ -287,6 +334,7 @@ public extension HDExtension where ExtendedType: FileManager {
         case .ImageType:
             let data = content as! Data
             do {
+                try fileManager.createDirectory(atPath: writePath, withIntermediateDirectories: true, attributes: nil)
                 try data.write(to: URL(fileURLWithPath: writePath))
                 return .success(true)
             } catch _ {

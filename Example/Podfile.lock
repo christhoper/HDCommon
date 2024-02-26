@@ -1,22 +1,46 @@
 PODS:
   - Alamofire (5.8.1)
-  - HDCommon (1.0.2):
-    - HDCommon/Base (= 1.0.2)
-    - HDCommon/Extensions (= 1.0.2)
-    - HDCommon/Networking (= 1.0.2)
-    - HDCommon/Utils (= 1.0.2)
-  - HDCommon/Base (1.0.2)
-  - HDCommon/Extensions (1.0.2)
-  - HDCommon/Networking (1.0.2):
+  - DoraemonKit (3.1.3):
+    - DoraemonKit/Core (= 3.1.3)
+  - DoraemonKit/Core (3.1.3):
+    - FMDB
+    - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - GCDWebServer (3.5.4):
+    - GCDWebServer/Core (= 3.5.4)
+  - GCDWebServer/Core (3.5.4)
+  - GCDWebServer/WebDAV (3.5.4):
+    - GCDWebServer/Core
+  - GCDWebServer/WebUploader (3.5.4):
+    - GCDWebServer/Core
+  - HDCommon (1.0.3):
+    - HDCommon/Base (= 1.0.3)
+    - HDCommon/Extensions (= 1.0.3)
+    - HDCommon/Networking (= 1.0.3)
+    - HDCommon/Utils (= 1.0.3)
+  - HDCommon/Base (1.0.3)
+  - HDCommon/Extensions (1.0.3):
+    - HDCommon/Base
+  - HDCommon/Networking (1.0.3):
     - Alamofire
-  - HDCommon/Utils (1.0.2)
+  - HDCommon/Utils (1.0.3):
+    - HDCommon/Base
+    - HDCommon/Extensions
 
 DEPENDENCIES:
+  - DoraemonKit
   - HDCommon (from `../`)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - DoraemonKit
+    - FMDB
+    - GCDWebServer
 
 EXTERNAL SOURCES:
   HDCommon:
@@ -24,8 +48,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
-  HDCommon: a4a92f168435ae27bae10f3b50a9e5b6db3fc513
+  DoraemonKit: 7448814a80d9ca56bc8db9105c464b7ec2e62623
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
+  HDCommon: d837c48c63b037a66a2454624ebdcf70e1a89c68
 
-PODFILE CHECKSUM: f8d1d59b86e817411207b9e15a069b8e6351c65d
+PODFILE CHECKSUM: 483eb575b1add2047ded4c08cf40cb6644513dbb
 
 COCOAPODS: 1.15.2
