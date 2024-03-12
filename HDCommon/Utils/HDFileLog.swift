@@ -21,6 +21,8 @@ extension String: HDFileContentType {
     public typealias ValueType = String
 }
 
+// MARK: - 日志系统
+
 final public class HDFileLog: NSObject {
     /// 单粒对象
     public static let shared = HDFileLog()

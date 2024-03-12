@@ -1,6 +1,6 @@
 {
   "name": "HDCommon",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "summary": "swift 开发中的一些基础公共库",
   "description": "平时开发的基础工具等，方便组件化，避免重复造轮子；",
   "homepage": "https://github.com/christhoper/HDCommon",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/christhoper/HDCommon.git",
-    "tag": "1.0.3"
+    "tag": "1.0.4"
   },
   "platforms": {
     "ios": "10.0"

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HDCommon'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = 'swift 开发中的一些基础公共库'
 
 # This description is used to generate tags and improve search results.

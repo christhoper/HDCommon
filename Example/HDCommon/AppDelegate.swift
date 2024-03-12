@@ -12,7 +12,9 @@ import HDCommon
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var list: [UIImage] = []
     var window: UIWindow?
+    var task: UIBackgroundTaskIdentifier?
     enum Test: Error {
     case one
     }
@@ -21,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let rootController = ViewController()
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = rootController
+        window?.rootViewController = UINavigationController(rootViewController: rootController)
         window?.makeKeyAndVisible()
         HDCrashManager.shared.register()
         
@@ -42,8 +44,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        task = application.beginBackgroundTask(withName: "HDTask")
+        
+        DispatchQueue.global().async {
+            for index in 0..<10000000000 {
+                let image = UIImage()
+                self.list.append(image)
+                print("创建大对象\(index)")
+            }
+            
+            application.endBackgroundTask(self.task!)
+        }
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {

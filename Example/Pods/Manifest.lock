@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (5.8.1)
+  - CocoaLumberjack (3.7.4):
+    - CocoaLumberjack/Core (= 3.7.4)
+  - CocoaLumberjack/Core (3.7.4)
   - DoraemonKit (3.1.3):
     - DoraemonKit/Core (= 3.1.3)
   - DoraemonKit/Core (3.1.3):
@@ -17,27 +20,29 @@ PODS:
     - GCDWebServer/Core
   - GCDWebServer/WebUploader (3.5.4):
     - GCDWebServer/Core
-  - HDCommon (1.0.3):
-    - HDCommon/Base (= 1.0.3)
-    - HDCommon/Extensions (= 1.0.3)
-    - HDCommon/Networking (= 1.0.3)
-    - HDCommon/Utils (= 1.0.3)
-  - HDCommon/Base (1.0.3)
-  - HDCommon/Extensions (1.0.3):
+  - HDCommon (1.0.4):
+    - HDCommon/Base (= 1.0.4)
+    - HDCommon/Extensions (= 1.0.4)
+    - HDCommon/Networking (= 1.0.4)
+    - HDCommon/Utils (= 1.0.4)
+  - HDCommon/Base (1.0.4)
+  - HDCommon/Extensions (1.0.4):
     - HDCommon/Base
-  - HDCommon/Networking (1.0.3):
+  - HDCommon/Networking (1.0.4):
     - Alamofire
-  - HDCommon/Utils (1.0.3):
+  - HDCommon/Utils (1.0.4):
     - HDCommon/Base
     - HDCommon/Extensions
 
 DEPENDENCIES:
+  - CocoaLumberjack
   - DoraemonKit
   - HDCommon (from `../`)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - CocoaLumberjack
     - DoraemonKit
     - FMDB
     - GCDWebServer
@@ -48,11 +53,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
+  CocoaLumberjack: 543c79c114dadc3b1aba95641d8738b06b05b646
   DoraemonKit: 7448814a80d9ca56bc8db9105c464b7ec2e62623
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
-  HDCommon: d837c48c63b037a66a2454624ebdcf70e1a89c68
+  HDCommon: 9494efb62cb24efccc366ff4fdb2b429d1814709
 
-PODFILE CHECKSUM: 483eb575b1add2047ded4c08cf40cb6644513dbb
+PODFILE CHECKSUM: 531eaa27b02d22f9bae700e05f38776453b3b034
 
 COCOAPODS: 1.15.2
